@@ -1,5 +1,6 @@
 #include "Renderer.h"
-
+#include <cmath>
+#include <algorithm>
 #include <iostream>
 Renderer::Renderer(int w, int h)
 {
@@ -33,5 +34,26 @@ void Renderer::display()
     for (const auto& row : buffer)
     {
         std::cout << row << '\n';
+    }
+}
+void Renderer::drawLine(int x1, int y1, int x2, int y2, char pixel)
+{
+    int dx = x2 - x1;
+    int dy = y2 - y1;
+
+    int steps = std::max(std::abs(dx), std::abs(dy));
+
+    float xIncrement = dx / (float)steps;
+    float yIncrement = dy / (float)steps;
+
+    float x = x1;
+    float y = y1;
+
+    for(int i = 0; i <= steps; i++)
+    {
+        drawPixel((int)std::round(x), (int)std::round(y), pixel);
+
+        x += xIncrement;
+        y += yIncrement;
     }
 }

@@ -9,7 +9,6 @@ class Renderer
 private:
     int width;
     int height;
-
     std::vector<std::string> buffer;
 
 public:
@@ -20,6 +19,8 @@ public:
     void display();
 
     void drawPixel(int x, int y, char pixel);
+
+    void drawLine(int x1, int y1, int x2, int y2, char pixel);
 };
 
 #endif

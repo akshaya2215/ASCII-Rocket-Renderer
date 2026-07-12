@@ -2,11 +2,15 @@
 
 int main()
 {
-    Renderer screen(60, 20);
+    Renderer screen(80,25);
 
     screen.clear();
 
-    screen.drawPixel(30,10,'@');
+    screen.drawLine(5,5,70,5,'-');      // Horizontal
+
+    screen.drawLine(10,2,10,20,'|');    // Vertical
+
+    screen.drawLine(5,20,70,2,'*');     // Diagonal
 
     screen.display();
 
