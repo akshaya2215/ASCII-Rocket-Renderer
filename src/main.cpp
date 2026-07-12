@@ -5,20 +5,33 @@ int main()
     Renderer screen(80,25);
 
     screen.clear();
-    Point2D A = {5,5};
-    Point2D B = {70,5};
+    Point2D nose = {40,2};
 
-    Point2D C = {10,2};
-    Point2D D = {10,20};
+    Point2D leftTop = {34,7};
+    Point2D rightTop = {46,7};
 
-    Point2D E = {5,20};
-    Point2D F = {70,2};
-    screen.drawLine(A,B,'-');
+    Point2D leftBottom = {33,20};
+    Point2D rightBottom = {47,20};
 
-    screen.drawLine(C,D,'|');
+    Point2D leftWing = {23,24};
+    Point2D rightWing = {57,24};
 
-    screen.drawLine(E,F,'*');
-   
+    Point2D leftEngine = {36,24};
+    Point2D rightEngine = {44,24};
+
+    Point2D exhaust = {40,28};
+    screen.drawLine(nose, leftTop, '/');
+    screen.drawLine(nose, rightTop, '\\');
+    screen.drawLine(leftTop, rightTop, '-');
+    screen.drawLine(leftTop, leftBottom, '|');
+    screen.drawLine(rightTop, rightBottom, '|');
+    screen.drawLine(leftBottom, leftWing, '/');
+    screen.drawLine(rightBottom, rightWing, '\\');
+    screen.drawLine(leftWing, leftEngine, '_');
+    screen.drawLine(leftEngine, rightEngine, '_');
+    screen.drawLine(rightEngine, rightWing, '_');
+    screen.drawLine(leftEngine, exhaust, '\\');
+    screen.drawLine(rightEngine, exhaust, '/');
 
     screen.display();
 
