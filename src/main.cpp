@@ -1,82 +1,27 @@
 #include "Renderer.h"
+#include "Rocket.h"
+
 #include <chrono>
 #include <thread>
 
 int main()
 {
-    Renderer screen(80, 25);
+    Renderer screen(80,25);
 
-    int offset = 0;
-    int direction = 1;
+    Rocket rocket;
 
-    while (true)
+    while(true)
     {
         screen.clear();
 
-        // =========================
-        // Rocket Points
-        // =========================
-        Point2D nose = {40, 2 + offset};
+        rocket.update();
 
-        Point2D leftTop = {34, 7 + offset};
-        Point2D rightTop = {46, 7 + offset};
+        rocket.draw(screen);
 
-        Point2D leftBottom = {34, 20 + offset};
-        Point2D rightBottom = {46, 20 + offset};
-
-        Point2D leftWing = {23, 24 + offset};
-        Point2D rightWing = {57, 24 + offset};
-
-        Point2D leftEngine = {36, 24 + offset};
-        Point2D rightEngine = {44, 24 + offset};
-
-        Point2D exhaust = {40, 28 + offset};
-
-        // =========================
-        // Draw Rocket
-        // =========================
-        screen.drawLine(nose, leftTop, '/');
-        screen.drawLine(nose, rightTop, '\\');
-
-        screen.drawLine(leftTop, rightTop, '-');
-
-        screen.drawLine(leftTop, leftBottom, '|');
-        screen.drawLine(rightTop, rightBottom, '|');
-
-        screen.drawLine(leftBottom, leftWing, '/');
-        screen.drawLine(rightBottom, rightWing, '\\');
-
-        screen.drawLine(leftWing, leftEngine, '_');
-        screen.drawLine(leftEngine, rightEngine, '_');
-        screen.drawLine(rightEngine, rightWing, '_');
-
-        screen.drawLine(leftEngine, exhaust, '\\');
-        screen.drawLine(rightEngine, exhaust, '/');
-
-        // =========================
-        // Show Frame
-        // =========================
         screen.display();
 
-        // =========================
-        // Animation Logic
-        // =========================
-        offset += direction;
-
-        if (offset >= 5)
-        {
-            direction = -1;
-        }
-
-        if (offset <= 0)
-        {
-            direction = 1;
-        }
-
-        // =========================
-        // Delay
-        // =========================
-        std::this_thread::sleep_for(std::chrono::milliseconds(80));
+        std::this_thread::sleep_for(
+            std::chrono::milliseconds(80));
     }
 
     return 0;
