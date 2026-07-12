@@ -3,6 +3,11 @@
 
 #include <vector>
 #include <string>
+struct Point2D
+{
+    int x;
+    int y;
+};
 
 class Renderer
 {
@@ -20,7 +25,9 @@ public:
 
     void drawPixel(int x, int y, char pixel);
 
-    void drawLine(int x1, int y1, int x2, int y2, char pixel);
+    void drawLine(Point2D start,
+              Point2D end,
+              char pixel);
 };
 
 #endif

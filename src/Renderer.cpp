@@ -36,18 +36,20 @@ void Renderer::display()
         std::cout << row << '\n';
     }
 }
-void Renderer::drawLine(int x1, int y1, int x2, int y2, char pixel)
+void Renderer::drawLine(Point2D start,
+                        Point2D end,
+                        char pixel)
 {
-    int dx = x2 - x1;
-    int dy = y2 - y1;
+    int dx = end.x - start.x;
+    int dy = end.y - start.y;
 
     int steps = std::max(std::abs(dx), std::abs(dy));
 
     float xIncrement = dx / (float)steps;
     float yIncrement = dy / (float)steps;
 
-    float x = x1;
-    float y = y1;
+    float x = start.x;
+    float y = start.y;
 
     for(int i = 0; i <= steps; i++)
     {

@@ -5,12 +5,20 @@ int main()
     Renderer screen(80,25);
 
     screen.clear();
+    Point2D A = {5,5};
+    Point2D B = {70,5};
 
-    screen.drawLine(5,5,70,5,'-');      // Horizontal
+    Point2D C = {10,2};
+    Point2D D = {10,20};
 
-    screen.drawLine(10,2,10,20,'|');    // Vertical
+    Point2D E = {5,20};
+    Point2D F = {70,2};
+    screen.drawLine(A,B,'-');
 
-    screen.drawLine(5,20,70,2,'*');     // Diagonal
+    screen.drawLine(C,D,'|');
+
+    screen.drawLine(E,F,'*');
+   
 
     screen.display();
 
