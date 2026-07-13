@@ -55,3 +55,21 @@ void Rocket::update()
         direction = 1;
     }
 }
+void Rocket::draw3D(Renderer& screen)
+{
+    Point3D nose = {0.0f, 8.0f, 0.0f};
+
+    Point3D leftTop = {-2.0f, 5.0f, 0.0f};
+    Point3D rightTop = {2.0f, 5.0f, 0.0f};
+
+    Point3D leftBottom = {-2.0f, -5.0f, 0.0f};
+    Point3D rightBottom = {2.0f, -5.0f, 0.0f};
+
+    Point3D leftWing = {-5.0f, -8.0f, 0.0f};
+    Point3D rightWing = {5.0f, -8.0f, 0.0f};
+
+    Point3D engineLeft = {-1.0f, -8.0f, 0.0f};
+    Point3D engineRight = {1.0f, -8.0f, 0.0f};
+
+    Point3D exhaust = {0.0f, -11.0f, 0.0f};
+}

@@ -2,12 +2,14 @@
 #define ROCKET_H
 
 #include "Renderer.h"
+#include "Math3D.h"
 
 class Rocket
 {
 private:
     int offset;
     int direction;
+    float angle;
 
 public:
     Rocket();
@@ -15,6 +17,8 @@ public:
     void update();
 
     void draw(Renderer& screen);
+
+    void draw3D(Renderer& screen);
 };
 
 #endif

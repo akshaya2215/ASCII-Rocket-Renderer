@@ -1,5 +1,6 @@
 #include "Renderer.h"
 #include "Rocket.h"
+#include "Cube.h"
 
 #include <chrono>
 #include <thread>
@@ -9,14 +10,14 @@ int main()
     Renderer screen(80,25);
 
     Rocket rocket;
-
+    Cube cube;
     while(true)
     {
         screen.clear();
 
         rocket.update();
 
-        rocket.draw(screen);
+        cube.draw(screen);
 
         screen.display();
 
