@@ -1,6 +1,7 @@
 #include "Renderer.h"
 #include "Rocket.h"
 #include "Cube.h"
+#include "Rocket3D.h"
 
 #include <chrono>
 #include <thread>
@@ -11,15 +12,12 @@ int main()
 
     Rocket rocket;
     Cube cube;
+    Rocket3D rocket3d;
     while(true)
     {
         screen.clear();
-
-        //rocket.update();
-        //rocket.draw(screen);
-        cube.update();
-        cube.draw(screen);
-
+        rocket3d.update();
+        rocket3d.draw(screen);
         screen.display();
 
         std::this_thread::sleep_for(
