@@ -15,14 +15,15 @@ int main()
     {
         screen.clear();
 
-        rocket.update();
-
+        //rocket.update();
+        //rocket.draw(screen);
+        cube.update();
         cube.draw(screen);
 
         screen.display();
 
         std::this_thread::sleep_for(
-            std::chrono::milliseconds(80));
+            std::chrono::milliseconds(50));
     }
 
     return 0;

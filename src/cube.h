@@ -8,14 +8,16 @@ class Cube
 {
 private:
     Point3D vertices[8];
+    float angle;
+
+    void drawEdge(Renderer& screen, int a, int b);
 
 public:
     Cube();
 
-    void draw(Renderer& screen);
+    void update();
 
-private:
-    void drawEdge(Renderer& screen, int a, int b);
+    void draw(Renderer& screen);
 };
 
 #endif
