@@ -8,7 +8,12 @@ class Rocket3D
 {
 private:
 
-    Point3D vertices[10];
+    static const int VERTEX_COUNT = 48;
+    static const int EDGE_COUNT = 72;
+
+    Point3D vertices[VERTEX_COUNT];
+
+    int edges[EDGE_COUNT][2];
 
     float angle;
 
